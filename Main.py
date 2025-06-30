@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import os
-import subprocess
 import sys
+import image_converter
 from pathlib import Path
 
 version = "1.0"
@@ -36,16 +36,8 @@ def display_banner():
     print(f"{Colors.BOLD}https://github.com/YanYiGe2023/ImageBridge{Colors.ENDC}")
     print(f"{Colors.BLUE}{'=' * 60}")
 
-def validate_script():
-    """验证转换脚本是否存在"""
-    if not Path(CONVERTER_SCRIPT).is_file():
-        print(f"{Colors.RED}错误: 未找到转换脚本 {CONVERTER_SCRIPT}")
-        print("请确保此菜单脚本与转换脚本在同一目录下{Colors.ENDC}")
-        sys.exit(1)
-
-
 def run_converter(command):
-    """运行转换器脚本"""
+    """运行转换器脚本
     try:
         clear_screen()
         print(f"{Colors.YELLOW}执行命令: python {CONVERTER_SCRIPT} {' '.join(command)}{Colors.ENDC}\n")
@@ -60,6 +52,7 @@ def run_converter(command):
     except KeyboardInterrupt:
         print(f"\n{Colors.YELLOW}操作已取消{Colors.ENDC}")
         return False
+    """
 
 
 def get_input_folder():
@@ -105,14 +98,7 @@ def to_webp_menu():
     output_folder = get_output_folder()
     quality = get_quality()
 
-    command = [
-        "to_webp",
-        "-i", input_folder,
-        "-o", output_folder,
-        "-q", str(quality)
-    ]
-
-    if run_converter(command):
+    if image_converter.batch_convert(input_folder, output_folder, "to_webp", format, quality):
         print(f"\n{Colors.GREEN}转换完成! 输出目录: {output_folder}{Colors.ENDC}")
     input("\n按回车键返回主菜单...")
 
@@ -138,24 +124,13 @@ def from_webp_menu():
         format = "jpg"
 
     quality = get_quality()
-
-    command = [
-        "from_webp",
-        "-i", input_folder,
-        "-o", output_folder,
-        "-f", format,
-        "-q", str(quality)
-    ]
-
-    if run_converter(command):
+    if image_converter.batch_convert(input_folder, output_folder, "from_webp", format, quality):
         print(f"\n{Colors.GREEN}转换完成! 输出目录: {output_folder}{Colors.ENDC}")
     input("\n按回车键返回主菜单...")
 
 
 def main_menu():
     """主菜单"""
-    validate_script()
-
     while True:
         clear_screen()
         display_banner()
