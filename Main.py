@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-"""
-ImageConverter 命令行菜单系统 v1.0
-功能：提供用户友好的图像转换界面，无需修改原始转换脚本
-"""
 
 import os
 import subprocess
 import sys
 from pathlib import Path
+
+version = "1.0"
 
 # 原始转换脚本名称
 CONVERTER_SCRIPT = "image_converter.py"
@@ -34,11 +32,9 @@ def clear_screen():
 def display_banner():
     """显示程序横幅"""
     print(f"{Colors.BLUE}{'=' * 60}")
-    print(f"{Colors.BOLD}ImageConverter 命令行菜单系统 v1.0{Colors.ENDC}")
-    print(f"{'=' * 60}{Colors.ENDC}")
-    print(f"{Colors.CYAN}此菜单系统提供对 {CONVERTER_SCRIPT} 的友好访问")
-    print(f"无需修改原始转换脚本{Colors.ENDC}\n")
-
+    print(f"{Colors.BOLD}ImageBridge v{version}{Colors.ENDC}")
+    print(f"{Colors.BOLD}https://github.com/YanYiGe2023/ImageBridge{Colors.ENDC}")
+    print(f"{Colors.BLUE}{'=' * 60}")
 
 def validate_script():
     """验证转换脚本是否存在"""
@@ -177,7 +173,7 @@ def main_menu():
         elif choice == "2":
             from_webp_menu()
         elif choice == "3":
-            print(f"\n{Colors.BLUE}感谢使用ImageConverter菜单系统!{Colors.ENDC}")
+            print(f"\n{Colors.BLUE}感谢使用ImageBridge{Colors.ENDC}")
             sys.exit(0)
         else:
             print(f"{Colors.RED}无效选择，请重新输入{Colors.ENDC}")
