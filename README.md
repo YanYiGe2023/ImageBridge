@@ -1,30 +1,17 @@
 # ImageBridge
-Universal Image Format Converter
+一个简单易用的图像格式转换工具，支持 JPG/PNG 与 WebP 格式之间的双向批量转换。无需安装 Python，开箱即用！
 ![demo](https://github.com/user-attachments/assets/b1c25d1d-64f0-4f90-9c58-f7ebcfe41cc3)
 
+## 功能特点
 
-## 使用说明
-```
-全能图像转换工具 v1.0
+- 🔄 **双向格式转换**：支持 JPG/PNG → WebP 和 WebP → JPG/PNG
+- 🚀 **批量处理**：一键转换整个文件夹中的图像
+- 🖥️ **友好界面**：命令行菜单交互，无需记忆复杂参数
+- 🌐 **跨平台**：支持 Windows、macOS 和 Linux
+- 📦 **独立运行**：无需安装 Python 或其他依赖
 
-positional arguments:
-  {to_webp,from_webp}   转换方向:
-                          to_webp   - 将普通图片转为 WebP
-                          from_webp - 将 WebP 转为其他格式
-
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-                        输入文件夹路径 (默认: ./input)
-  -o OUTPUT, --output OUTPUT
-                        输出文件夹路径 (默认: ./output)
-  -f {jpg,jpeg,png}, --format {jpg,jpeg,png}
-                        当使用 from_webp 操作时的输出格式 (默认: png)
-  -q 1-100, --quality 1-100
-                        输出图像质量 (默认: 85)
-  -v, --version         show program's version number and exit
-```
+## 使用
+前往 [Releases 页面](https://github.com/YanYiGe2023/ImageBridge/releases) 下载最新版本：
 
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+本项目采用 MIT 许可证授权 - 有关详细信息，请参见 [LICENSE](LICENSE) 文件。
