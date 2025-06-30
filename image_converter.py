@@ -4,6 +4,8 @@ import argparse
 from PIL import Image
 from pathlib import Path
 
+version = "1.0"
+
 
 def convert_image(input_path, output_path, format, quality=85):
     """
@@ -114,7 +116,7 @@ def batch_convert(input_folder, output_folder, operation, format, quality=85):
 def main():
     # 创建命令行解析器
     parser = argparse.ArgumentParser(
-        description="全能图像转换工具 v1.0",
+        description="全能图像转换工具 v" + version,
         formatter_class=argparse.RawTextHelpFormatter
     )
 
@@ -158,7 +160,7 @@ def main():
     parser.add_argument(
         '-v', '--version',
         action='version',
-        version='全能图像转换工具 v1.0'
+        version='全能图像转换工具 v' + version
     )
 
     # 解析参数
