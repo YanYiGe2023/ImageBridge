@@ -12,7 +12,8 @@
 - 📦 **独立运行**：无需安装 Python 或其他依赖
 
 ## 使用
-前往 [Releases 页面](https://github.com/YanYiGe2023/ImageBridge/releases) 下载最新版本：
+前往 [Releases 页面](https://github.com/YanYiGe2023/ImageBridge/releases) 下载最新版本：<br>
+或前往[123云盘](https://www.123912.com/s/A6A0Vv-JWsO) 下载：<br>
 根据您的操作系统，下载对应的版本，之后双击运行即可！
 
 ## License
