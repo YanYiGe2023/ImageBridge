@@ -13,6 +13,7 @@
 
 ## 使用
 前往 [Releases 页面](https://github.com/YanYiGe2023/ImageBridge/releases) 下载最新版本：
+根据您的操作系统，下载对应的版本，之后双击运行即可！
 
 ## License
 本项目采用 MIT 许可证授权 - 有关详细信息，请参见 [LICENSE](LICENSE) 文件。
